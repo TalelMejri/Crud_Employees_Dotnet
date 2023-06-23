@@ -7,6 +7,7 @@ namespace Employees.Models
     public class Department
     {
         [Key]
+        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name ="Department Id")]
         public int DepartmentId { get; set; }
