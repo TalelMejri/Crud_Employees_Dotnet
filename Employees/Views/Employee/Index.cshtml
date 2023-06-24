@@ -1,3 +1,70 @@
-﻿
+﻿@model IEnumerable<Employees>
 
-<h1>Hello</h1>
+    <h1>List Employee</h1>
+    <a asp-action="Create">Create New Employee</a>
+     <table class="table table-bordred">
+         <thead>
+             <th>
+            @Html.DisplayNameFor(model=>model.EmployeeID)
+             </th>
+              <th>
+                    @Html.DisplayNameFor(model=>model.EmployeeNumber)
+             </th>
+              <th>
+            @Html.DisplayNameFor(model=>model.EmployeeName)
+            </th>
+            <th>
+            @Html.DisplayNameFor(model=>model.DOB)
+             </th>
+    <th>
+            @Html.DisplayNameFor(model=>model.HiringBirth)
+    </th>
+    <th>
+          Slaray
+    </th>
+    <th>
+        Net Salary
+    </th>
+    <th>
+        Department Name
+    </th>
+    <th>
+      Operation
+    </th>
+         </thead>
+         <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.EmployeeID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.EmployeeNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.DOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.HiringBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.GrossSalary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.NetSalary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.DepartmentName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit","Edit",new {id=item.EmployeeID})<!--text/action/id-->
+                @Html.ActionLink("Delete","Delete",new {id=item.EmployeeID}, new {onclick="return confirm('do you want delete this') "})
+                </td>
+            </tr>
+        }
+    </tbody> 
+     </table>
