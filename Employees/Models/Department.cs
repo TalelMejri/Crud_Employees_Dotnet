@@ -9,7 +9,7 @@ namespace Employees.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name ="Department Id")]
-        public int DepartmentId { get; set; }
+        public int DepartmentId { get; set; } 
 
         [Required]
         [Column(TypeName="Varchar(150)")]

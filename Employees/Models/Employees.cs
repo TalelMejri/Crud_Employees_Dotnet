@@ -25,6 +25,7 @@ namespace Employees.Models
 
         [Required]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}")]
         [Display(Name ="Date of birth")]
         public DateTime DOB { get; set; }
 
@@ -32,6 +33,7 @@ namespace Employees.Models
         [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Hiring Date")]
+        [DisplayFormat(DataFormatString ="{0:dd-MMM-yyyy}")]
         public DateTime HiringBirth { get; set; }
 
         [Required]
