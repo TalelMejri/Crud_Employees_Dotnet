@@ -6,7 +6,7 @@ namespace Employees.Controllers
     {
 
         HRDataBaseContact dbContext=new HRDataBaseContact();
-        public IActionResult Index()
+        public IActionResult Index(String searchString)
         {
             //List<Models.Employees> employee=dbContext.Employees.ToList(); // because i used name app some name model (Models.Employees) to fix it
             var employees = (from employee in dbContext.Employees
@@ -23,6 +23,10 @@ namespace Employees.Controllers
                                  DepartmentId = employee.DepartmentId,
                                  DepartmentName = Department.DepartmentName,
                              }).ToList();
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                employees = employees.Where(e => e.EmployeeName.Contains(searchString)).ToList();
+            }
             
             return View(employees);
         }

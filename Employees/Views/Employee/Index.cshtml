@@ -2,6 +2,13 @@
 
     <h1>List Employee</h1>
     <a asp-action="Create">Create New Employee</a>
+    <form asp-controller="employee" asp-action="Index" method="get">
+        <p>
+            <input type="text" name="searchString" class="form-control"/>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </p>
+        </</form>
+
      <table class="table table-bordred">
          <thead>
              <th>
