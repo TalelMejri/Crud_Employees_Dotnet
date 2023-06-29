@@ -4,8 +4,14 @@ namespace Employees.Controllers
 {
     public class EmployeeController : Controller
     {
+       // private readonly HRDataBaseContact dbContext;
 
-        HRDataBaseContact dbContext=new HRDataBaseContact();
+       /* public EmployeeController(HRDataBaseContact context)
+        {
+            dbContext = context;
+        }*/
+
+       HRDataBaseContact dbContext=new HRDataBaseContact();
         public IActionResult Index(String searchString)
         {
             //List<Models.Employees> employee=dbContext.Employees.ToList(); // because i used name app some name model (Models.Employees) to fix it

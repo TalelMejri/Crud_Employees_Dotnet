@@ -8,6 +8,10 @@ namespace Employees.Models
 
         public DbSet<Employees> Employees { get; set; }
 
+       /* public HRDataBaseContact(DbContextOptions options) : base(options)
+        {
+
+        }*/
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"data source=Desktop-d1jfgmm\sqlexpress; initial catalog=EmployeesDB; integrated security=SSPI;TrustServerCertificate=True");
